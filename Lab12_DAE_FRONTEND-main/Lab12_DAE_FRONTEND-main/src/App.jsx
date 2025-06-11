@@ -31,6 +31,7 @@ function App() {
         {/* Rutas con header */}
         <Route element={<Layout />}>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/series/new" element={<SerieFormPage/>} />
           <Route path="/categories" element={<CategoryPage />} />
           <Route path="/series" element={<SeriePage />} />
           <Route path="/series/new" element={<SerieFormPage />} />
