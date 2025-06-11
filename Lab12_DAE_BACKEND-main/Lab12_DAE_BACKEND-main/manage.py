@@ -3,7 +3,7 @@
 import os
 import sys
 
-
+# This file is part of the Lab12_DAE_BACKEND project.
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'series_api.settings')
