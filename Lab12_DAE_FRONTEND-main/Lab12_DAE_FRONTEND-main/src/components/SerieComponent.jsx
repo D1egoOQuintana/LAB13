@@ -1,11 +1,18 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-
+import { deleteSerieService } from "../services/serieService";
 function SerieComponent(props) {
     const navigate = useNavigate();
 
     const gotoUrl = (codigo) => {
         navigate("/series/edit/" + codigo);
+    }
+    const handleDelete = () => {
+        if(window.confirm('¿Estás seguro de que quieres eliminar esta serie?')) {
+            await deleteSerieService(codigo)
+            const nLista = props.series.filter(item => item.id!== props.codigo);
+            props.actualizarLista(nLista);
+        }
     }
 
     return (

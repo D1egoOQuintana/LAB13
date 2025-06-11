@@ -84,9 +84,13 @@ function SeriePage() {
                             <div key={serie.id} className="col-md-3 mb-3">
                                 <SerieComponent
                                     codigo={serie.id}
-                                    nombre={serie.name}
-                                    categoria={serie.category_description}
-                                    imagen={"serie.png"}
+                                    titulo={serie.title}
+                                    descripcion={serie.description}
+                                    fecha={serie.release_date}
+                                    rating={serie.rating}
+                                    categoria={serie.category.name} // Esto funciona gracias a tu serializer. ¡Bien hecho!
+                                    imagen={serie.image_url}
+                                    onDelete={() => handleDelete(serie.id)}
                                 />
                             </div>
                         ))
