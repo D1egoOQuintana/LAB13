@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import SerieComponent from '../components/SerieComponent';
+import { getAllSerieService } from '../services/serieServices'; // Importamos el servicio para obtener series
 
 function SeriePage() {
     // 1. MODIFICACIÓN: Centralizamos la URL de la API para series.
@@ -14,8 +15,12 @@ function SeriePage() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const loadData = async () => {
+        const resp = await getAllSerieService();
+        setSeries(resp.data);
+    };
     useEffect(() => {
-        fetchSeries();
+        loadData();
     }, []);
 
     const fetchSeries = () => {
@@ -75,17 +80,13 @@ function SeriePage() {
                             </div>
                         </div>
                     ) : (
-                        series.map(serie => (
-                            <div className="col-md-4 mb-3" key={serie.id}>
-                                <SerieComponent 
+                        series.map((serie) => (
+                            <div key={serie.id} className="col-md-3 mb-3">
+                                <SerieComponent
                                     codigo={serie.id}
-                                    titulo={serie.title}
-                                    descripcion={serie.description}
-                                    fecha={serie.release_date}
-                                    rating={serie.rating}
-                                    categoria={serie.category.name} // Esto funciona gracias a tu serializer. ¡Bien hecho!
-                                    imagen={serie.image_url}
-                                    onDelete={() => handleDelete(serie.id)}
+                                    nombre={serie.name}
+                                    categoria={serie.category_description}
+                                    imagen={"serie.png"}
                                 />
                             </div>
                         ))
