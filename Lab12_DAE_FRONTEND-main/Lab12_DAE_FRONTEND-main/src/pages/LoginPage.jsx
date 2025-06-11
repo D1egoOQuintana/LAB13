@@ -8,7 +8,7 @@ function LoginPage(){
         e.preventDefault();
         navigate("/series");
     }
-
+//Test
     return (
     	<section className="d-flex justify-content-center align-items-center min-vh-100">
             <div className="container">

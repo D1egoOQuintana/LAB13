@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import SerieComponent from '../components/SerieComponent';
 import { getAllSerieService } from '../services/serieServices'; // Importamos el servicio para obtener series
-
+//Tests
 function SeriePage() {
     // 1. MODIFICACIÓN: Centralizamos la URL de la API para series.
     const urlApi = 'http://localhost:8000/series/api/v1/series/';
