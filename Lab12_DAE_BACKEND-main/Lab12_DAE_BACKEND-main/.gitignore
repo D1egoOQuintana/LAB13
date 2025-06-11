@@ -1,0 +1,38 @@
+# Archivos de Python
+*.pyc
+*.pyo
+__pycache__/
+.DS_Store
+
+# Entornos virtuales
+venv/
+*.env
+
+# Archivos de Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+
+# Archivos de PyCharm
+.idea/
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos de sistema operativo
+Thumbs.db
+
+# Archivos de paquetes
+*.egg-info/
+dist/
+build/
+
+# Otros
+*.swp
+*~
+\#*
+*.bak
+*.orig
+*.dump
+.vscode/*
