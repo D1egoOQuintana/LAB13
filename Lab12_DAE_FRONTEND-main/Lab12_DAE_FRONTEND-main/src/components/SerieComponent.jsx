@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { deleteSerieService } from "../services/serieService";
+import { deleteSerieService } from "../services/serieServices";
 function SerieComponent(props) {
     const navigate = useNavigate();
 
