@@ -7,9 +7,9 @@ function SerieComponent(props) {
     const gotoUrl = (codigo) => {
         navigate("/series/edit/" + codigo);
     }
-    const handleDelete = () => {
+    const handleDelete = async () => {
         if(window.confirm('¿Estás seguro de que quieres eliminar esta serie?')) {
-            await deleteSerieService(codigo)
+            await deleteSerieService(props.codigo)
             const nLista = props.series.filter(item => item.id!== props.codigo);
             props.actualizarLista(nLista);
         }
@@ -32,7 +32,7 @@ function SerieComponent(props) {
                         Editar
                     </button>
                     <button 
-                        onClick={props.onDelete} 
+                        onClick={handleDelete} 
                         className="btn btn-danger"
                     >
                         Eliminar

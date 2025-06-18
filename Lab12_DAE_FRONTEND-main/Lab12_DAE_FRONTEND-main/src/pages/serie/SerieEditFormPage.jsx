@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import HeaderComponent from "../../components/HeaderComponent";
-import { getAllCategoryService } from "../../services/categoryService";
+import { getAllCategoryService } from "../../services/CategoryService";
 import { showSerieService, updateSerieService } from "../../services/serieService";
 
 
